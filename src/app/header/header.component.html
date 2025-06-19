@@ -1,0 +1,54 @@
+<div class="topbar">
+  <div class="container">
+    <div class="top-middle">
+      <ul class="useful-links">
+        <li><a routerLink="/home" routerLinkActive="active" i18n>Home</a></li>
+        <li><a routerLink="/catalog" routerLinkActive="active" i18n>Catalog</a></li>
+        <li><a routerLink="/cartdetail" routerLinkActive="active" i18n>Cart</a></li>
+        <li><a routerLink="/add-product" routerLinkActive="active" *ngIf="user?.userType === 'Admin'" >Ajouter un produit</a></li>
+        <li><a routerLink="/Admin" routerLinkActive="active" *ngIf="user?.userType === 'Admin'" >Admin</a></li>
+      </ul>
+    </div>
+    <div class="top-end">
+      <div class="user" i18n>
+        <i class="lni lni-user"></i>
+        Hello
+      </div>
+
+      <ul class="user-login">
+        <li class="right" *ngIf="!isLoggedIn">
+          <a class="cta" routerLink="/login" routerLinkActive="active" i18n>Sign In/Register</a>
+        </li>
+        <li class="right" *ngIf="isLoggedIn">
+          <div>
+            <img src="/assets/images/profile.png" (click)="toggleProfileDetails()" class="profile-image" alt="profile" i18n-alt />
+          </div>
+        </li>
+        <button (click)="toggleTheme()">
+  {{ isDarkMode ? '☀️ Mode clair' : '🌙 Mode sombre' }}
+</button>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showProfileDetails" class="profile-modal show">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-right">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">Profile Details</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="toggleProfileDetails()"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid profile-avatar">
+        <h5 class="my-3">Welcome, {{ user.username }}</h5>
+        <p class="text-muted mb-1">{{ user.email }}</p>
+        <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+        <div class="d-flex justify-content-center mb-2">
+          <button type="button" class="btn btn-primary logout-btn" (click)="logout()">Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

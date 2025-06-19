@@ -1,0 +1,173 @@
+<div class="trans"> 
+  <div class="loop-wrapper">
+    <div class="mountain"></div>
+    <div class="hill"></div>
+    <div class="tree"></div>
+    <div class="tree"></div>
+    <div class="tree"></div>
+    <div class="rock"></div>
+    <div class="truck"></div>
+    <div class="wheels"></div>
+  </div> 
+</div> 
+<section class="bg-light py-5" >
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-8 mb-4">
+          <!-- Checkout -->
+          <form [formGroup]="form" (ngSubmit)="generateInvoice()">
+          <div class="card shadow-0 border">
+            <div class="p-4">
+              <div class="row">
+                <div class="col-6 mb-3">
+                  <p class="mb-0">First name</p>
+                  <div class="form-outline">
+                    <input type="text" formControlName="firstName" placeholder="Type here" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-6">
+                  <p class="mb-0">Last name</p>
+                  <div class="form-outline">
+                    <input type="text" formControlName="lastName" placeholder="Type here" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-6 mb-3">
+                  <p class="mb-0">Phone</p>
+                  <div class="form-outline">
+                    <input type="tel" formControlName="phone" value="+212 " class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-6 mb-3">
+                  <p class="mb-0">Email</p>
+                  <div class="form-outline">
+                    <input type="email" formControlName="email" placeholder="example@gmail.com" class="form-control" />
+                  </div>
+                </div>
+              </div>
+  
+              <hr class="my-4" />
+  
+              <h4 class="card-title mb-3">Shipping info</h4>
+  
+              <div class="row mb-3">
+                <div class="col-lg-4 mb-3">
+                  <!-- Default checked radio -->
+                  <div class="form-check h-100 border rounded-3">
+                    <div class="p-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Express delivery <br />
+                        <small class="text-muted">3-4 days via Fedex </small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                  <!-- Default radio -->
+                  <div class="form-check h-100 border rounded-3">
+                    <div class="p-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Post office <br />
+                        <small class="text-muted">20-30 days via post </small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mb-3">
+                  <!-- Default radio -->
+                  <div class="form-check h-100 border rounded-3">
+                    <div class="p-3">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        Self pick-up <br />
+                        <small class="text-muted">Come to our shop </small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-sm-8 mb-3">
+                  <p class="mb-0">Address</p>
+                  <div class="form-outline">
+                    <input type="text" formControlName="address" placeholder="address" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-sm-4 mb-3">
+                  <p class="mb-0">City</p>
+                  <div class="form-outline">
+                    <input type="text" formControlName="city" placeholder="city" class="form-control" />
+                  </div>
+                </div>
+  
+                <div class="col-sm-4 col-6 mb-3">
+                  <p class="mb-0">Postal code</p>
+                  <div class="form-outline">
+                    <input type="text" formControlName="postalCode" placeholder="postal code" class="form-control" />
+                  </div>
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <p class="mb-0">Message to seller</p>
+                <div class="form-outline">
+                  <textarea class="form-control" formControlName="message" rows="2"></textarea>
+                </div>
+              </div>
+  
+              <div class="float-end">
+                <button (click)="Cancel()" class="btn btn-light border me-1">Cancel</button>
+                <button [disabled]="form.invalid" type="submit" class="btn btn-dark shadow-0 border">Continue</button>
+              </div>
+            </div>
+          </div>
+        </form>
+          <!-- Checkout -->
+        </div>
+        <div class="col-xl-4 col-lg-4 d-flex justify-content-center justify-content-lg-end">
+          <div class="ms-lg-4 mt-4 mt-lg-0" style="max-width: 320px;">
+            <h3 class="mb-3">Summary</h3>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Total price:</p>
+              <p class="mb-2">{{totalAmount}}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Shipping cost:</p>
+              <p class="mb-2">+{{100 }}</p>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Final price:</p>
+              <p class="mb-2 fw-bold">{{totalAmount + 100}} DH</p>
+            </div>
+  
+  
+            <hr/>
+            <h4 class="text-dark my-4">Items in cart</h4>
+  
+            <div class="d-flex align-items-center mb-4" *ngFor="let p of cart.Products">
+              <div class="me-3 position-relative">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
+                  1
+                </span>
+                <img [src]="p.product.product_image" style="height: 96px; width: 120px;" class="img-sm rounded border" />
+              </div>
+              <div class="">
+                <strong>{{p.product.product_title}}</strong>
+                <div class="price text-muted"><i>x{{p.quantity}}</i></div>
+                <div class="price text-muted"><i>{{p.product.product_price*p.quantity}} DH</i></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+

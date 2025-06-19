@@ -1,0 +1,6 @@
+.original-price {
+    display: inline-block;
+    text-decoration: line-through;
+    color: red;
+    margin-right: 10px; /* pour séparer les prix */
+  }

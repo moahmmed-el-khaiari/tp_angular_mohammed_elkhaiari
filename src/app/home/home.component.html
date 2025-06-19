@@ -1,0 +1,75 @@
+<div class="container">
+  <!-- Section Héros -->
+  <section class="hero">
+    <img src="/assets/images/logo_mohammed.png" alt="Hero Banner" class="hero-img" />
+    <h1 i18n>Welcome to Mohammed Shop</h1>
+    <p i18n>Fast delivery, trusted service, and amazing deals.</p>
+    <a routerLink="/catalog" class="btn-main" i18n>Shop Now</a>
+  </section>
+
+  <!-- Texte tournant -->
+  <div class="rotating-text">
+    <span>Fast</span>
+    <span>Reliable</span>
+    <span>Secure</span>
+  </div>
+
+  <!-- Avantages -->
+  <section class="benefits">
+    <div class="benefit">
+      <img src="/assets/images/fast.jpeg" alt="Fast Shipping" />
+      <h3 i18n>Fast Shipping</h3>
+      <p i18n>Get your products delivered quickly to your doorstep.</p>
+    </div>
+    <div class="benefit">
+      <img src="/assets/images/speciall.png" alt="Exclusive Discounts" />
+      <h3 i18n>Exclusive Discounts</h3>
+      <p i18n>Enjoy special discounts and offers on selected items.</p>
+    </div>
+    <div class="benefit">
+      <img src="/assets/images/service1.png" alt="Customer Support" />
+      <h3 i18n>24/7 Customer Support</h3>
+      <p i18n>Need assistance? Our support team is available round the clock.</p>
+    </div>
+  </section>
+
+  <!-- SVG animé (rapide + moderne + scalable) -->
+  <section class="svg-hero-section" style="text-align:center; margin-top: 4rem;">
+    <svg width="100%" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+      <rect x="100" y="180" width="700" height="100" rx="20" fill="#FFD700" stroke="#000" stroke-width="3"/>
+      <rect x="150" y="100" width="40" height="80" rx="5" fill="#111">
+        <animate attributeName="height" values="80;100;80" dur="2s" repeatCount="indefinite" />
+      </rect>
+      <rect x="210" y="80" width="40" height="100" rx="5" fill="#222">
+        <animate attributeName="height" values="100;120;100" dur="2s" repeatCount="indefinite" begin="0.3s" />
+      </rect>
+      <rect x="270" y="120" width="40" height="60" rx="5" fill="#333">
+        <animate attributeName="height" values="60;90;60" dur="2s" repeatCount="indefinite" begin="0.6s" />
+      </rect>
+      <g transform="translate(600,140)">
+        <polygon points="0,0 40,20 0,40" fill="#000" />
+        <rect x="40" y="10" width="50" height="20" rx="4" fill="#FFD700"/>
+        <circle cx="95" cy="20" r="5" fill="#000" />
+        <path d="M0,20 Q-10,25 -20,20 Q-10,15 0,20" fill="#ff5722">
+          <animateTransform attributeName="transform" type="translate" values="0,0; -20,0; 0,0" dur="0.6s" repeatCount="indefinite" />
+        </path>
+        <animateTransform attributeName="transform" type="translate" from="600 140" to="900 100" dur="5s" repeatCount="indefinite" />
+      </g>
+      <circle cx="400" cy="220" r="4" fill="#000">
+        <animate attributeName="cx" values="400;800" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="400" cy="230" r="4" fill="#000">
+        <animate attributeName="cx" values="400;800" dur="3.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0" dur="3.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="400" cy="240" r="4" fill="#000">
+        <animate attributeName="cx" values="400;800" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1;0" dur="4s" repeatCount="indefinite" />
+      </circle>
+      <text x="450" y="270" font-size="20" text-anchor="middle" fill="#000" font-family="Arial">
+        Scalable - Fast - Modern
+      </text>
+    </svg>
+  </section>
+</div>

@@ -1,0 +1,44 @@
+.content {
+    background-size: contain; /* Couvrir toute la surface de l'élément */
+    background-position: right; /* Centrer l'image de fond */
+    background-repeat: no-repeat; /* Ne pas répéter l'image de fond */
+    /* Vous pouvez également définir une hauteur fixe pour la section content si nécessaire */
+}
+.slider-head {
+    position: relative;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Ajout d'une couleur de fond semi-transparente */
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,14 @@
+.product-image img {
+    /* Ajoutez des styles spécifiques pour l'image ici */
+    /* Par exemple, pour appliquer le style de rotation sur l'image */
+    width: 100%; /* Faites en sorte que la largeur de l'image soit égale à 100% de la largeur du conteneur */
+    height: 100%; /* Faites en sorte que la hauteur de l'image soit égale à 100% de la hauteur du conteneur */
+    object-fit: cover;
+    transform: rotateY(0deg); /* Commencez la rotation depuis un angle de 0 degrés */
+    animation: rotateAnimation 5s linear infinite; /* Ajustez la durée de l'animation à 5 secondes */
+}
+
+@keyframes rotateAnimation {
+    from {transform: rotateY(0deg);} /* Commencez la rotation depuis un angle de 0 degrés */
+    to {transform: rotateY(360deg);} /* Faites une rotation complète de 360 degrés */
+}

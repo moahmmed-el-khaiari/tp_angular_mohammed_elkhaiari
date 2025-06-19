@@ -1,0 +1,96 @@
+<header class="header navbar-area">
+  <div class="header-middle py-3 bg-white shadow-sm">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-3 col-7">
+          <a class="navbar-brand" routerLink="/">
+            <img src="assets/images/logo/logo.svg" alt="Shop Mohammed Logo" height="50">
+          </a>
+        </div>
+        <div class="col-lg-5 col-md-7 d-none d-md-block">
+          <form class="search-form d-flex">
+            <input type="text" [(ngModel)]="searchCategory" name="searchCategory" placeholder="Search category..." class="form-control me-2">
+            <input type="text" [(ngModel)]="searchDetails" name="searchDetails" placeholder="Search details..." class="form-control me-2">
+            <button (click)="applyFilter()" class="btn btn-warning"><i class="lni lni-search-alt"></i></button>
+          </form>
+        </div>
+        <div class="col-lg-4 col-md-2 col-5 d-flex justify-content-end align-items-center">
+          <div class="nav-hotline me-4">
+            <i class="lni lni-phone fs-4 text-warning"></i>
+            <span class="ms-2">Hotline: (+212) 7 06 11 60 31</span>
+          </div>
+          <div class="navbar-cart">
+            <a routerLink="/cart" class="btn btn-dark position-relative">
+              <i class="lni lni-cart fs-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-bottom py-2 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="nav-inner d-flex gap-3 align-items-center">
+            <div class="category-toggle position-relative">
+              <button class="btn btn-warning" (click)="toggleCategoriesVisibility()">
+                <i class="lni lni-menu"></i> All Categories
+              </button>
+              <ul class="category-list bg-white text-dark mt-2 rounded shadow-sm p-2" *ngIf="showCategories">
+                <li><a routerLink="/catalog" [queryParams]="{filter:'camera_degital'}">📷 Digital Cameras</a></li>
+                <li><a routerLink="/catalog" [queryParams]="{filter:'drone'}">🚁 Camera Drones</a></li>
+                <li><a routerLink="/catalog" [queryParams]="{filter:'smart_watch'}">⌚ Smart Watches</a></li>
+                <li><a routerLink="/catalog" [queryParams]="{filter:'headphones'}">🎧 Headphones</a></li>
+                <li><a routerLink="/catalog" [queryParams]="{filter:'microphones'}">🎤 Microphones</a></li>
+              </ul>
+            </div>
+            <div class="filters d-flex flex-wrap gap-2">
+              <a routerLink="/catalog" [queryParams]="{filter:'phone'}" class="btn btn-outline-light">📱 Smartphone</a>
+              <a routerLink="/catalog" [queryParams]="{filter:'tablette'}" class="btn btn-outline-light">💻 Tablet</a>
+              <a routerLink="/catalog" [queryParams]="{filter:'TV'}" class="btn btn-outline-light">📺 Smart TV</a>
+              <a routerLink="/catalog" routerLinkActive="active" class="btn btn-outline-light">🛒 All</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-end">
+          <!-- Placeholder for banner or promo -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero-area py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="p-4 bg-white rounded shadow-sm">
+          <app-offer></app-offer>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="hero-large-banner rounded" style="background-image: url('assets/images/black.jpg'); height: 100%; background-size: cover; background-position: center;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trending-product py-5">
+  <div class="container">
+    <div class="section-title text-center mb-5">
+      <h2 class="fw-bold">🔥 Trending Products</h2>
+      <p class="text-muted">Explore the most wanted tech of the moment.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let product of products">
+        <div class="product-item" [ngClass]="{'low-quantity': product.quantity < 5, 'out-of-stock': product.quantity === 0}" *ngIf="product.quantity > 0">
+          <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="single-product bg-white p-3 rounded shadow-sm">
+            <app-product-details-component [product]="product"></app-product-details-component>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,155 @@
+<div style="height: 100vh; overflow-y: auto;">
+<section class="h-100 h-custom" style="background-color: #d2c9ff; overflow-y: auto;" >
+
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+            <div class="card-body p-0">
+              <div class="row g-0">
+                <div class="col-lg-8">
+                  <div class="p-5">
+                    <div class="d-flex justify-content-between align-items-center mb-5">
+                      <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                      <h6 class="mb-0 text-muted">3 items</h6>
+                    </div>
+                    <hr class="my-4">
+                  
+
+
+
+         
+
+
+
+
+
+
+
+                    <!--
+                        <li *ngFor="let product of cart.Products; let i = index">
+                          <div class="row mb-4 d-flex justify-content-between align-items-center">
+                            <div class="col-md-2 col-lg-2 col-xl-2">
+                              <img [src]="getImageUrl(product.product)" [alt]="product.product.product_title" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3">
+                              <h6 class="text-muted">Shirt</h6>
+                              <h6 class="text-black mb-0">{{ product.product.product_title }}</h6>
+                            </div>
+                            <div>
+                          
+                              <button  (click)="decrement(product)">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                      
+                              <input  [ngModel]="product.quantity" min="1" max="{{product.product.quantity}}">
+
+                      
+                              <button  (click)="increment(product)">
+                                <i class="fas fa-plus"></i>
+                              </button>
+                           
+                          </div>
+                            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                              <p>{{ product.product.product_title }} - {{ product.quantity }} unité(s) - {{ product.product.product_price * product.quantity }} €</p>
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                              <a href="javascript:void(0)" class="remove" title="Remove this item" (click)="removeFromCart(product.product)">
+                                <i class="lni lni-close"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </li>
+                     -->
+                     <ul class="cart-items">
+                      <li *ngFor="let product of cart.Products; let i = index">
+                        <div class="row mb-4 d-flex justify-content-between align-items-center">
+                          <div class="col-md-2 col-lg-2 col-xl-2">
+                            <img [src]="getImageUrl(product.product)" [alt]="product.product.product_title" class="img-fluid rounded-3" alt="Cotton T-shirt">
+                          </div>
+                          <div class="col-md-3 col-lg-3 col-xl-3">
+                            <h6 class="text-muted">Catégorie</h6>
+                            <h6 class="text-black mb-0">{{ product.product.product_title }}</h6>
+                          </div>
+                          <div class="col-md-4 col-lg-4 col-xl-4">
+                            <div class="d-flex justify-content-between align-items-center">
+                              <button class="decrement-btn" (click)="decrement(product)">
+                                <i class="fas fa-minus"></i>
+                              </button>
+                              <input class="quantity-input" [ngModel]="product.quantity" min="1" max="{{product.product.quantity}}">
+                              <button class="increment-btn" (click)="increment(product)">
+                                <i class="fas fa-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="col-md-3 col-lg-2 col-xl-2">
+                            <p>{{ product.product.product_title }} - {{ product.quantity }} unité(s) - {{ product.product.product_price * product.quantity }} €</p>
+                          </div>
+                          <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                            <a href="javascript:void(0)" class="remove" title="Supprimer cet article" (click)="removeFromPanier(product.product.productID)">
+                              <i class="lni lni-close"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    
+   
+
+       
+
+
+                    
+  
+                    <hr class="my-4">
+  
+                    <div class="pt-5">
+                      <h6 class="mb-0"><a href="#!" class="text-body"  [routerLink]="['/catalog']"><i
+                            class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 bg-grey">
+                  <div class="p-5">
+                    <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                    <hr class="my-4">
+  
+                   
+                        <h5 class="text-uppercase">items 3</h5>
+                        <div class="product-list">
+                          <ng-container *ngFor="let product of cart.Products">
+                            <div class="product-details">
+                              <p class="product-title">{{ product.product.product_title }}</p>
+                              <p class="product-info">
+                                <span class="quantity">{{ product.quantity }} ×</span>
+                                <span class="price">{{ product.product.product_price | currency:"." }} MAD</span>
+                                <span class="total">= {{ product.product.product_price * product.quantity | currency:"." }} MAD</span>
+                              </p>
+                            </div>
+                            <hr class="my-4">
+                          </ng-container>
+                        </div>
+                        
+                    <hr class="my-4">
+  
+                    <div class="d-flex justify-content-between mb-5">
+                      <h5 class="text-uppercase">Total price</h5>
+                      <h5 class="text-uppercase"> {{totalAmount |currency:"."}}MAD </h5>
+
+                    </div>
+
+
+  
+                    <button type="button" class="btn btn-dark btn-block btn-lg"
+                      data-mdb-ripple-color="dark"><a routerLink="/checkout">Checkout</a></button>
+  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,191 @@
+/* 🌟 Container général modernisé */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fff, #f7f7f7);
+  color: #222;
+}
+.rotating-text {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 2rem 0;
+  height: 3rem;  /* assez haut pour contenir les mots */
+  overflow: visible; /* éviter de couper le texte */
+}
+
+.rotating-text span {
+  display: inline-block;
+  margin: 0 1rem;
+  min-width: 80px;  /* minimum largeur pour que le mot s'affiche entier */
+  white-space: nowrap; /* éviter retour à la ligne */
+  vertical-align: middle;
+}
+
+/* 🚀 Hero Section avec design néon / glassmorphism */
+.hero {
+  position: relative;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #FFD700, transparent);
+  top: -50px;
+  left: -50px;
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.hero-img {
+  max-width: 160px;
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+  z-index: 1;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.btn-main {
+  background: #FFD700;
+  color: #000;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow: 0 0 20px #FFD700aa;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-main:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 35px #FFD700ee;
+}
+
+/* 🔁 Rotating text modernisé */
+.rotating-text {
+  margin: 2rem auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #111;
+  height: 2.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.rotating-text span {
+  position: absolute;
+  width: 100%;
+  animation: rotateWords 6s linear infinite;
+  opacity: 0;
+}
+
+.rotating-text span:nth-child(1) { animation-delay: 0s; opacity: 1; }
+.rotating-text span:nth-child(2) { animation-delay: 2s; }
+.rotating-text span:nth-child(3) { animation-delay: 4s; }
+
+/* 📦 Benefits modernisés */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.benefit {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.1);
+}
+
+.benefit img {
+  width: 70px;
+  margin-bottom: 1rem;
+}
+
+.benefit h3 {
+  margin-bottom: 0.5rem;
+  color: #111;
+  font-size: 1.2rem;
+}
+
+.benefit p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* 📊 Animation SVG */
+.store-animation {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
+/* 🎞️ Animations */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes rotateWords {
+  0% { opacity: 1; }
+  33.33% { opacity: 0; }
+  66.66% { opacity: 0; }
+  100% { opacity: 1; }
+}
+

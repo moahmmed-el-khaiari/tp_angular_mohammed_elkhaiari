@@ -1,0 +1,92 @@
+$ro: 16em;
+$w: 4em;
+$t: 12s;
+
+@property --houdini {
+	syntax: '<integer>';
+	initial-value: 1;
+	inherits: true
+}
+
+body, div { display: grid }
+
+body {
+	--s: var(--houdini, 0);
+	--not-s: calc(1 - var(--s));
+	overflow: hidden;
+	margin: 0;
+	height: 100vh;
+	perspective: 35em;
+	background: #000014
+}
+
+div, ::before, ::after { grid-area: 1/ 1 }
+
+div { transform-style: preserve-3d }
+
+.⭐ { animation: rot-y $t linear infinite }
+
+@keyframes rot-y { to { transform: rotateY(1turn) } }
+
+@property --int {
+	syntax: '<integer>';
+	initial-value: 0;
+	inherits: false
+}
+
+.arm {
+	--sgn-q: calc(2*var(--q) - 1);
+	--p: calc(var(--i)/var(--n));
+	--not-up: Min(1, var(--i));
+	--up: calc(1 - var(--not-up));
+	--dif: calc(2*var(--i) - var(--n));
+	--not-dn: Min(1, Max(var(--dif), calc(-1*var(--dif))));
+	--dn: calc(1 - var(--not-dn));
+	place-self: center;
+	height: 0;
+	transform: rotatex(calc(var(--p)*1turn)) translatey(-$ro);
+	
+	&::before, &::after {
+		--k: 0;
+		--sgn-k: calc(2*var(--k) - 1);
+		--sum: calc(var(--p) + var(--sgn-k)*var(--rcm) + 1);
+		--int: calc(var(--sum) - .5);
+		--mod: calc(var(--sum) - var(--int));
+		--term: calc(var(--s)*var(--mod) + var(--not-s)*var(--p));
+		--abs: Max(calc(var(--term) - .5), calc(.5 - var(--term)));
+		--inc: calc(2*var(--abs) - .5);
+		--sgn-j: calc(var(--dn)*var(--sgn-k) - 
+									var(--up)*var(--sgn-k) + 
+									var(--not-dn)*var(--not-up)*clamp(-1, var(--dif), 1));
+		--j: calc(.5*(var(--sgn-j) + 1));
+		--sh: calc(.25*(3*var(--q) - var(--sgn-q)*(1 - var(--j))));
+		width: calc(2*var(--rsw)*#{$ro}); height: calc(var(--rsh)*#{$ro});
+		transform-origin: 50% 0;
+		transform: 
+			rotatey(calc(var(--k)*.5turn)) 
+			rotatex(var(--ax)) 
+			scalex(calc(var(--sgn-q)*var(--sgn-k))) 
+			rotatey(var(--ay));
+		background: 
+			repeating-radial-gradient(circle at 100% 100%, 
+					transparent 0 5px, hsla(47, 100%, calc(44%*(1 + var(--inc))), .3), transparent 7px), 
+			repeating-radial-gradient(circle at 100% 100%, 
+					transparent 0 11px, hsla(48, 100%, calc(45%*(1 + var(--inc))), .3), transparent 13px), 
+			repeating-radial-gradient(circle at 100% 100%, 
+					transparent 0 17px, hsla(49, 100%, calc(47%*(1 + var(--inc))), .3), transparent 19px), 
+			repeating-radial-gradient(circle at 100% 100%, 
+					transparent 0 41px, hsla(41, 100%, calc(43%*(1 + var(--inc))), .3), transparent 43px), 
+			linear-gradient(90deg, 
+					transparent 50%, 
+					hsl(40, 100%, calc(50%*(1 + var(--inc)))) 0, 
+					hsl(55, 100%, calc(52%*(1 + var(--inc)))));
+		background-blend-mode: multiply;
+		clip-path: polygon(50% 0, 50% calc(var(--re)*#{$ro}), 100% 100%);
+		animation: shade .5*$t ease-in-out calc((var(--sh) + .125)*#{-$t}) infinite alternate;
+		content: ''
+	}
+		
+	&::after { --k: 1 }
+}
+
+@keyframes shade { to { filter: brightness(.2) } }

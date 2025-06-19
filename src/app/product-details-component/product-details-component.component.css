@@ -1,0 +1,252 @@
+/*.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 200px;
+}
+
+.filters button {
+  width: 100px;
+}
+
+.products {
+  margin: 0 100px;
+  border-top: 2px solid #999;
+}
+
+.product-item {
+  border-bottom: 2px solid #999;
+}
+
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 25px;
+}
+
+.product .product-details {
+  display: flex;
+  align-items: center;
+}
+
+.product img {
+  width: 125px;
+}
+
+.product .product-info {
+  margin-left: 25px;
+}
+
+.product .name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.product .description {
+  margin-top: 3px;
+  font-size: 18px;
+}
+
+.product .category {
+  margin-top: 20px;
+  color: #777;
+}
+
+.product .price {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 190px;
+  color: #555;
+  border-left: 2px solid #aaa;
+  margin-left: 50px;
+}
+
+.product .price button {
+  padding: 10px;
+  width: 100px;
+}
+.low-quantity {
+  background-color: #ffe6e6; 
+}
+.more-details-cta {
+  background-color: #3498db; 
+  color: #fff; 
+  padding: 8px 16px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.more-details-cta:hover {
+  background-color: #2980b9; 
+}
+
+.page-title {
+  font-size: 40px;
+  color: #da1111; 
+  text-align: center;
+  margin-bottom: 40px; 
+}*/
+
+/* src/app/product-details/product-details.component.css */
+/* src/app/product-details/product-details.component.css */
+/* src/app/product-details/product-details.component.css */
+/* src/app/product-details/product-details.component.css */
+.product-container {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+
+.product-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.toggle-details-cta {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.low-quantity {
+  background-color: #ffcccb;
+}
+
+.low-stock {
+  border: 2px solid #e74c3c;
+}
+.product-details {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px;
+  padding: 10px;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.product-quantity {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* Container pour les boutons */
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start; /* Aligner les boutons à gauche */
+  gap: 10px; /* Espacement entre les boutons */
+}
+
+/* Style général pour les boutons */
+.btn {
+  padding: 6px 9px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Bouton Modifier */
+.btn-modifier {
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: #fff; /* Texte blanc */
+}
+
+.btn-modifier:hover {
+  background-color: #0056b3; /* Couleur de fond bleue foncée */
+}
+
+/* Bouton Supprimer */
+.btn-supprimer {
+  background-color: #dc3545; /* Couleur de fond rouge */
+  color: #fff; /* Texte blanc */
+}
+
+.btn-supprimer:hover {
+  background-color: #c82333; /* Couleur de fond rouge foncée */
+}
+
+/* Espacement entre l'icône et le texte du bouton */
+.btn i {
+  margin-right: 5px;
+}
+
+/* Effet de survol pour les boutons */
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Styles supplémentaires pour les détails du produit */
+.product-image {
+  margin-bottom: 20px;
+}
+
+.product-info {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  position: relative; /* Assurez-vous que le conteneur parent est relatif */
+}
+
+.product-details {
+  margin-bottom: 20px;
+}
+
+.product-quantity {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.low-quantity {
+  color: red;
+}
+

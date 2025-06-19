@@ -1,0 +1,61 @@
+<!-- src/app/product-details/product-details.component.html -->
+
+<div class="product-image" [ngClass]="{'low-quantity': product.quantity < 5}" >
+  <div class="product" [ngClass]="{'low-stock': isLowStock(product.quantity)}">
+         <img [src]="product.product_image"  alt="#" >
+         <div class="product-details">
+  <!-- Autres détails du produit -->
+             <div class="button">
+                 <a href="javascript:void(0)" class="btn" (click)="addToCart(product)">
+                <i class="lni lni-cart"></i> Add to Cart</a>
+             </div>
+         </div>
+  </div>
+</div>
+
+<div class="product-info">
+  <span class="category">{{product.product_title}}</span>
+  <h4 class="title">
+    <a [routerLink]="['/detail', product.productID, product.category]">{{ product.product_title}}</a>
+
+
+  </h4>
+ 
+  <button class="toggle-details-cta"  (click)="toggleDescription()">
+    {{ showDescription ? 'Cacher les détails' : 'Afficher plus de détails' }}
+  </button>
+  <div class="description" *ngIf="showDescription">
+    <div class="product-details">
+      <p>{{ showFullDetails ? product.details : product.details.substring(0, 100) }}</p>
+       <!-- <button *ngIf="!showFullDetails && product.details.length > 100" (click)="toggleFullDetails()" >Voir plus de détails</button> pour afficher detil dans le meme page -->
+      <a *ngIf="!showFullDetails && product.details.length > 100" [routerLink]="['/detail', product.productID, product.category]" [fragment]="'details'"> <b>Read More ... </b></a>
+    </div>
+    <p class="product-quantity" [ngClass]="{'low-quantity': product.quantity < 5}">Quantité: {{ product.quantity }}</p>
+  </div>
+  <ul class="review">
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star-filled"></i></li>
+      <li><i class="lni lni-star"></i></li>
+      <li><span>4.0 Review(s)</span></li>
+  </ul>
+  <div class="price">
+      <span *ngIf="isPromotionApplied" style="text-decoration: line-through; color: red;">prix: {{originalPrice   |currency:"."}} MAD</span>
+      
+  <p>
+    Price: 
+    <span *ngIf="isPromotionApplied">{{ product.product_price | currency :"."}} MAD</span>
+    <span *ngIf="!isPromotionApplied">{{ product.product_price | currency :"."}} MAD</span>
+  </p>
+      
+  </div>
+  <div class="buttons-container" *ngIf="user?.userType === 'Admin'" >
+    <button class="btn btn-modifier" (click)="editProduct()">
+      <i class="fas fa-pencil-alt"></i> Modifier
+    </button>
+    <button class="btn btn-supprimer" (click)="deleteProduct()" >
+      <i class="fas fa-trash-alt"></i> Supprimer
+    </button>
+  </div>
+</div>

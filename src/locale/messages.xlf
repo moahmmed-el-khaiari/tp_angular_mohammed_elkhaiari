@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2821179408673282599" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5736481176444461852" datatype="html">
+        <source>About Us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="759687838251957893" datatype="html">
+        <source>Contact Us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">56,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7478087288024654262" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;lni lni-user&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Hello </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">61,63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="840692109692540367" datatype="html">
+        <source>Sign In</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">66,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3301086086650990787" datatype="html">
+        <source>Register</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7813000971625481835" datatype="html">
+        <source>profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="935790816200474922" datatype="html">
+        <source>Sign Out</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2949253518639725119" datatype="html">
+        <source>Welcome to Our Online Store</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4280747323735022511" datatype="html">
+        <source>Discover the best deals on electronics and gadgets!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3236331063880522850" datatype="html">
+        <source>Shop Now</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3656734505965082986" datatype="html">
+        <source>Fast Shipping</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8018988301297700410" datatype="html">
+        <source>Get your products delivered quickly to your doorstep.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">48,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="669959916132733689" datatype="html">
+        <source>Exclusive Discounts</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2556601192377047478" datatype="html">
+        <source>Enjoy special discounts and offers on selected items.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">53,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="32258387395174888" datatype="html">
+        <source>24/7 Customer Support</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8891508050576617817" datatype="html">
+        <source>Need assistance? Our support team is available round the clock.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3713535236358421849" datatype="html">
+        <source>Smart Phone</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8062803351078182377" datatype="html">
+        <source>Tablet</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1274996453550607235" datatype="html">
+        <source>Smart TV</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,31 @@
+
+
+<div class="slider-head">
+    <div class="hero-slider">
+        <div class="single-slider" *ngFor="let product of products; let i = index;" [hidden]="currentIndex !== i">
+            <div class="content" [style.background-image]="'url(' + product.product_image + ')'">
+                <h2>{{ product.product_title }}</h2>
+            
+
+                
+                    <p>{{ showFullDetails ? product.details : product.details.substring(0, 100) }}....</p>
+                     <!-- <button *ngIf="!showFullDetails && product.details.length > 100" (click)="toggleFullDetails()" >Voir plus de détails</button> pour afficher detil dans le meme page -->
+                    
+                 
+
+
+                
+                <h3><span>Now Only</span>  {{product.product_price |currency:"."}} MAD</h3>
+                <div class="button">
+                    <a href="product-grids.html" class="btn" [routerLink]="['/detail', product.productID, product.category]" >Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="slider-btn prev-btn" (click)="prevSlide()">&#10094;</button>
+    <button class="slider-btn next-btn" (click)="nextSlide()">&#10095;</button>
+</div>
+
+
+
+

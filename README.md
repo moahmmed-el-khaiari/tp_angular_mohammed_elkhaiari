@@ -68,7 +68,7 @@ Ce projet a pour objectif de développer une application web de commerce électr
 ![Login](./screenshots/login.png)
 
 ### 📊 Espace Admin
-![Admin](./screenshots/admindashboard.png)
+![Admin](.\screenshots\admindashboard.png)
 
 ## 🏗 Architecture technique
 

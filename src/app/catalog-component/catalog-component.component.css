@@ -1,11 +1,12 @@
-/* Reset basique */
+/* ===================== RESET ET VARIABLES ===================== */
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Variables couleurs */
 :root {
   --yellow: #ffbb00;
   --yellow-dark: #cc9900;
@@ -13,11 +14,11 @@
   --light-bg: #f9f9f9;
   --text-primary: #333;
   --text-light: #fff;
-  --shadow-sm: rgba(0,0,0,0.1);
-  --shadow-md: rgba(0,0,0,0.2);
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.2);
 }
 
-/* === HEADER === */
+/* ===================== HEADER ===================== */
 .header {
   font-weight: 600;
   user-select: none;
@@ -27,18 +28,12 @@
   box-shadow: 0 4px 6px var(--shadow-sm);
   animation: slideDown 0.5s ease forwards;
 }
-
-/* Animation d’apparition du header */
 @keyframes slideDown {
-  from {
-    opacity: 0; transform: translateY(-20px);
-  }
-  to {
-    opacity: 1; transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* HEADER MIDDLE */
+/* ===================== HEADER MIDDLE ===================== */
 .header-middle {
   background-color: var(--light-bg);
   box-shadow: 0 1px 10px var(--shadow-sm);
@@ -48,18 +43,16 @@
 .header-middle:hover {
   background-color: #fffbe6;
 }
-
-/* Logo */
 .navbar-brand img {
   transition: transform 0.4s ease;
   cursor: pointer;
-  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.05));
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.05));
 }
 .navbar-brand img:hover {
   transform: scale(1.05) rotate(-2deg);
 }
 
-/* Search form */
+/* ===================== SEARCH FORM ===================== */
 .search-form {
   gap: 0.75rem;
   transition: box-shadow 0.3s ease;
@@ -91,7 +84,7 @@
   transform: scale(1.1);
 }
 
-/* Hotline & Cart */
+/* ===================== HOTLINE & CART ===================== */
 .nav-hotline {
   display: flex;
   align-items: center;
@@ -109,8 +102,6 @@
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
-
-/* Cart button */
 .navbar-cart a {
   position: relative;
   color: var(--light-bg);
@@ -132,17 +123,15 @@
   font-size: 1.5rem;
 }
 
-/* HEADER BOTTOM */
+/* ===================== HEADER BOTTOM ===================== */
 .header-bottom {
   background-color: var(--dark-bg);
   color: var(--text-light);
   padding: 0.5rem 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  box-shadow: inset 0 -2px 4px rgba(255,187,0,0.2);
+  box-shadow: inset 0 -2px 4px rgba(255, 187, 0, 0.2);
 }
-
-/* Navigation inner container */
 .nav-inner {
   display: flex;
   align-items: center;
@@ -150,7 +139,7 @@
   flex-wrap: wrap;
 }
 
-/* Category toggle button */
+/* ===================== CATEGORY BUTTON ===================== */
 .category-toggle button {
   background-color: var(--yellow);
   border: none;
@@ -201,8 +190,12 @@
   color: var(--yellow);
   font-weight: 700;
 }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* Filters buttons */
+/* ===================== FILTRES ===================== */
 .filters a {
   border-radius: 6px;
   font-weight: 600;
@@ -211,63 +204,18 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   user-select: none;
 }
-.filters a:hover, .filters a.active {
+.filters a:hover,
+.filters a.active {
   background-color: var(--yellow);
   color: var(--dark-bg);
   box-shadow: 0 3px 10px var(--yellow);
 }
 
-/* Fade in dropdown */
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === HERO AREA === */
-.hero-area {
-  background-color: var(--light-bg);
-  padding: 3rem 0;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-.hero-area .p-4 {
-  box-shadow: 0 8px 25px var(--shadow-md);
-  transition: box-shadow 0.3s ease;
-  border-radius: 12px;
-  background: #fff;
-}
-.hero-area .p-4:hover {
-  box-shadow: 0 15px 40px var(--shadow-md);
-}
-
-/* Large banner style */
-.hero-large-banner {
-  border-radius: 12px;
-  box-shadow: 0 10px 35px var(--shadow-md);
-  transition: transform 0.4s ease;
-  cursor: pointer;
-}
-.hero-large-banner:hover {
-  transform: scale(1.03);
-}
-
-/* === TRENDING PRODUCTS === */
+/* ===================== PRODUITS / GRID ===================== */
 .trending-product {
   background: #fff;
   padding: 3rem 0;
 }
-
 .section-title h2 {
   font-size: 2.8rem;
   color: var(--text-primary);
@@ -283,20 +231,12 @@
   animation: slideInLeft 0.7s ease forwards;
   animation-delay: 0.15s;
 }
-
-/* Animation slideInLeft */
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-/* Product grid */
+/* ===== CARTE PRODUIT (AMÉLIORÉE) ===== */
 .product-item {
   animation: fadeInUp 0.6s ease forwards;
   opacity: 0;
@@ -306,28 +246,24 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   border-radius: 10px;
+  padding: 1rem;
 }
-
-/* On hover: scale and shadow */
 .product-item:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 15px 35px var(--shadow-md);
   z-index: 10;
 }
-
-/* fadeInUp animation */
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
 @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Product single card */
+/* ===== CONTENU INTÉRIEUR CARTE ===== */
 .single-product {
   border-radius: 12px;
   padding: 1.2rem;
@@ -337,9 +273,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 420px;
 }
 
-/* Low stock highlight */
+/* Titre uniforme */
+.product-item h5,
+.product-item .title {
+  min-height: 48px;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+/* Stock bas ou épuisé */
 .low-stock {
   border: 2px solid var(--yellow);
   box-shadow: 0 0 12px var(--yellow);
@@ -349,15 +294,13 @@
   0%, 100% { box-shadow: 0 0 12px var(--yellow); }
   50% { box-shadow: 0 0 20px var(--yellow); }
 }
-
-/* Out of stock styling if needed */
-/* .out-of-stock {
+.out-of-stock {
   opacity: 0.5;
   filter: grayscale(70%);
   pointer-events: none;
-} */
+}
 
-/* Responsive tweaks */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 992px) {
   .header-middle .search-form {
     flex-direction: column;
@@ -365,14 +308,10 @@
   .header-middle .search-form input {
     margin-bottom: 0.6rem;
   }
-  .nav-inner {
-    justify-content: center;
-  }
-  .filters {
+  .nav-inner, .filters {
     justify-content: center;
   }
 }
-
 @media (max-width: 576px) {
   .navbar-cart a {
     padding: 0.35rem 0.5rem;

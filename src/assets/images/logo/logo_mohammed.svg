@@ -1,0 +1,11 @@
+<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="220" height="60" rx="12" fill="#4F46E5"/>
+  <text x="20" y="38" font-family="Poppins, sans-serif" font-size="20" fill="white" font-weight="600">
+    Mohammed
+    <tspan fill="#FCD34D">_Shop</tspan>
+  </text>
+  <g transform="translate(170, 10)">
+    <rect x="0" y="0" width="35" height="35" rx="8" fill="#FCD34D"/>
+    <path d="M10 15h15l-2 10H12l-2-10zM14 25a2 2 0 104 0" fill="#111827"/>
+  </g>
+</svg>

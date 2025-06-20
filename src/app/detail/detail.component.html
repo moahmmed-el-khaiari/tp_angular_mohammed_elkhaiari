@@ -1,128 +1,122 @@
+<section class="item-details section" *ngIf="product">
+  <div class="container">
+    <div class="top-area" id="details">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="product-images">
+            <main id="gallery">
+              <div class="product-image">
+                <img [src]="product.product_image" alt="Product image">
+              </div>
+            </main>
+          </div>
+        </div>
 
-    
-    <section class="item-details section">
-        <div class="container">
-            <div class="top-area" id="details">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12 col-12">
-                        <div class="product-images">
-                            <main id="gallery">
-                                
-                                <div class="product-image">
-                                    <img [src]="product.product_image" alt="#" >
-                                </div>
-                               
-                            </main>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-12">
-                        <div class="product-info">
-                            <h2 class="title">{{ product.product_title }}</h2>
-                            <p class="category"><i class="lni lni-tag"></i> {{ product.category }}<a href="javascript:void(0)">Action
-                                    cameras</a></p>
-                               
-                            <h3 class="price">prix: {{product.product_price |currency:"."}} MAD</h3>
-                            <p class="info-text">{{ product.details }}</p>
-                            <div class="row">
-                    
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="product-info">
+            <h2 class="title">{{ product.product_title }}</h2>
+            <p class="category">
+              <i class="lni lni-tag"></i> {{ product.category }}
+              <a href="javascript:void(0)">Action cameras</a>
+            </p>
 
-                            </div>
-                            <div class="bottom-content">
-                                <div class="row align-items-end">
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="button cart-button">
-                                            <button class="btn" style="width: 100%;" (click)="addToCart(product)">Add to Cart</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
+            <h3 class="price">
+              Prix : {{ product.product_price | currency: "." }} MAD
+            </h3>
 
-            <section class="related-products section">
-                <div class="container">
-                  <h2>Produits liés</h2>
-                  <div class="row">
-                    <!-- Boucle sur les produits liés -->
-                    <div class="col-lg-3 col-md-6 col-12" *ngFor="let product of relatedProducts">
+            <p class="info-text">{{ product.details }}</p>
 
-                        <div class="product-item" [ngClass]="{'low-quantity': product.quantity < 5, 'out-of-stock': product.quantity === 0}" >
-                          <div [ngClass]="{'low-stock': isLowStock(product.quantity)}" class="single-product">
-                            <app-product-details-component [product]="product"></app-product-details-component>
-                          </div>
-                        </div>
-                   
-                </div>
-                
+            <div class="bottom-content">
+              <div class="row align-items-end">
+                <div class="col-lg-4 col-md-4 col-12">
+                  <div class="button cart-button">
+                    <button class="btn" style="width: 100%;" (click)="addToCart(product)">Add to Cart</button>
                   </div>
                 </div>
-              </section>
-              
-
-
-
-        </div>
-    </section>
-    <!-- End Item Details -->
-
-    <!-- Review Modal -->
-    <div class="modal fade review-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Leave a Review</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="review-name">Your Name</label>
-                                <input class="form-control" type="text" id="review-name" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="review-email">Your Email</label>
-                                <input class="form-control" type="email" id="review-email" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="review-subject">Subject</label>
-                                <input class="form-control" type="text" id="review-subject" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="review-rating">Rating</label>
-                                <select class="form-control" id="review-rating">
-                                    <option>5 Stars</option>
-                                    <option>4 Stars</option>
-                                    <option>3 Stars</option>
-                                    <option>2 Stars</option>
-                                    <option>1 Star</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="review-message">Review</label>
-                        <textarea class="form-control" id="review-message" rows="8" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer button">
-                    <button type="button" class="btn">Submit Review</button>
-                </div>
+              </div>
             </div>
-        </div>
-    </div>
-    <!-- End Review Modal -->
 
-  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Produits liés -->
+    <section class="related-products section" *ngIf="relatedProducts.length > 0">
+      <div class="container">
+        <h2>Produits liés</h2>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12" *ngFor="let related of relatedProducts">
+            <div class="product-item" [ngClass]="{
+                'low-quantity': related.quantity < 5,
+                'out-of-stock': related.quantity === 0
+              }">
+              <div [ngClass]="{'low-stock': isLowStock(related.quantity)}" class="single-product">
+                <app-product-details-component [product]="related"></app-product-details-component>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<!-- Review Modal (pas modifié) -->
+<div class="modal fade review-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Leave a Review</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="review-name">Your Name</label>
+              <input class="form-control" type="text" id="review-name" required>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="review-email">Your Email</label>
+              <input class="form-control" type="email" id="review-email" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="review-subject">Subject</label>
+              <input class="form-control" type="text" id="review-subject" required>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="review-rating">Rating</label>
+              <select class="form-control" id="review-rating">
+                <option>5 Stars</option>
+                <option>4 Stars</option>
+                <option>3 Stars</option>
+                <option>2 Stars</option>
+                <option>1 Star</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="review-message">Review</label>
+          <textarea class="form-control" id="review-message" rows="8" required></textarea>
+        </div>
+      </div>
+      <div class="modal-footer button">
+        <button type="button" class="btn">Submit Review</button>
+      </div>
+    </div>
+  </div>
+</div>

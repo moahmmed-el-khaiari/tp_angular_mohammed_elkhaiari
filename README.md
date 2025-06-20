@@ -53,6 +53,22 @@ Ce projet a pour objectif de développer une application web de commerce électr
 - 👤 Espace profil utilisateur
 
 ---
+## 📸 Captures d’écran de l’application
+
+### 🏠 Page d'accueil
+![Accueil](./screenshots/homepage.png)
+
+### 🛒 Catalogue des produits
+![Catalogue](./screenshots/catalog.png)
+
+### 🧺 Panier
+![Panier](./screenshots/cart.png)
+
+### 👤 Connexion utilisateur
+![Login](./screenshots/login.png)
+
+### 📊 Espace Admin
+![Admin](./screenshots/admindashboard.png)
 
 ## 🏗 Architecture technique
 

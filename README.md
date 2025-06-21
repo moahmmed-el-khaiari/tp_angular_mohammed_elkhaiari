@@ -13,7 +13,15 @@
 Ce projet a pour objectif de développer une application web de commerce électronique permettant de vendre des produits en ligne. L’application propose une interface fluide et responsive, une gestion sécurisée des utilisateurs, ainsi qu’un système complet de gestion de catalogue, panier, commandes, stock et offres.
 
 ---
+# Mohammed Shop - Projet E-commerce
 
+## 🚀 Installation et lancement du projet
+
+### 1. Cloner le dépôt
+
+
+git clone https://github.com/moahmmed-el-khaiari/tp_angular_mohammed_elkhaiari.git
+cd tp_angular_mohammed_elkhaiari
 ## 🔧 Technologies utilisées
 
 ### 🎨 Frontend (Angular)
@@ -25,6 +33,10 @@ Ce projet a pour objectif de développer une application web de commerce électr
 - SCSS / CSS Animé
 - Responsive design
 
+
+cd backend
+# Installer Maven Wrapper si nécessaire, puis lancer l’application
+./mvnw spring-boot:run
 ### ⚙️ Backend (Spring Boot)
 - Spring Boot 3
 - Spring Security (authentification et rôles)
@@ -39,7 +51,9 @@ Ce projet a pour objectif de développer une application web de commerce électr
 - Angular CLI / Maven
 
 ---
-
+cd ../frontend
+npm install
+ng serve
 ## 🗂 Fonctionnalités principales
 
 - ✅ Authentification / inscription / rôles (Admin, Client)
@@ -70,9 +84,7 @@ Ce projet a pour objectif de développer une application web de commerce électr
 ### 📊 Espace Admin
 ![Admin](.\screenshots\admindashboard.png)
 
-## 🏗 Architecture technique
 
-![Architecture technique](assets/images/architecture.png) <!-- ajoute ton image réelle ici -->
 
 L’application est structurée selon une architecture client-serveur :
 

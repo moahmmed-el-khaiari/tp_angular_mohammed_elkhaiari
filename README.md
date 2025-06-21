@@ -82,7 +82,7 @@ ng serve
 ![Login](./screenshots/login.png)
 
 ### 📊 Espace Admin
-![Admin](.\screenshots\admindashboard.png)
+![Admin](./screenshots/admindashboard.png)
 
 
 
